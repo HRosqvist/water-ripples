@@ -59,5 +59,7 @@ function mouseDragged() {
 }
 
 function touchMoved() {
-  previous[mouseX][mouseY] = 2500
+  for (let touch of touches) {
+    previous[touch.x][touch.y] = 2500
+  }
 }
