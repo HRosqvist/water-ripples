@@ -1,3 +1,6 @@
+let maxWidth = 800
+let maxHeight = 1200
+
 let current
 let previous
 
@@ -7,7 +10,18 @@ let rows
 let damping = 0.9999
 
 function setup() {
-  createCanvas(800, 1200);
+  let canvasWidth = floor(windowWidth * 0.9)
+  let canvasHeight = floor(windowHeight * 0.8)
+
+  if (canvasWidth > 800) {
+    canvasWidth = maxWidth
+  }
+
+  if (canvasHeight > 1200) {
+    canvasHeight = maxHeight
+  }
+
+  createCanvas(canvasWidth, canvasHeight);
 
   columns = width
   rows = height
