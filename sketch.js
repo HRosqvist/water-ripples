@@ -57,3 +57,7 @@ function draw() {
 function mouseDragged() {
   previous[mouseX][mouseY] = 2500
 }
+
+function touchMoved() {
+  previous[mouseX][mouseY] = 2500
+}
