@@ -7,7 +7,7 @@ let previous
 let columns
 let rows
 
-let damping = 0.9999
+let damping = 0.99
 
 function setup() {
   let canvasWidth = floor(windowWidth * 0.9)
@@ -58,8 +58,8 @@ function mouseDragged() {
   previous[mouseX][mouseY] = 2500
 }
 
-function touchMoved() {
+function touchStarted() {
   for (let touch of touches) {
-    previous[touch.x][touch.y] = 2500
+    circle(touch.x, touch.y, 40);
   }
 }
