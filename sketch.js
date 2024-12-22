@@ -55,11 +55,9 @@ function draw() {
 }
 
 function mouseDragged() {
-  previous[mouseX][mouseY] = 2500
-}
-
-function touchStarted() {
-  for (let touch of touches) {
-    circle(touch.x, touch.y, 40);
+  let col = floor(mouseX)
+  let row = floor(mouseY)
+  if (col > 0 && col < width && row > 0 && row < height) {
+    previous[floor(mouseX)][floor(mouseY)] = 2500
   }
 }
