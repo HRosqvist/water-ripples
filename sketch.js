@@ -7,7 +7,8 @@ let previous
 let columns
 let rows
 
-let damping = 0.99
+let damping = 0.9
+let slider
 
 function setup() {
   let canvasWidth = floor(windowWidth * 0.9)
@@ -22,6 +23,8 @@ function setup() {
   }
 
   createCanvas(canvasWidth, canvasHeight);
+  slider = createSlider(0.9, 0.9999, 0.99, 0.001)
+  slider.size(80)
 
   columns = width
   rows = height
@@ -33,6 +36,7 @@ function setup() {
 function draw() {
   background(0);
   loadPixels()
+  damping = slider.value()
 
   for (let i = 1; i < columns - 1; i++) {
     for (let j = 1; j < rows - 1; j++) {
@@ -58,6 +62,6 @@ function mouseDragged() {
   let col = floor(mouseX)
   let row = floor(mouseY)
   if (col > 0 && col < width && row > 0 && row < height) {
-    previous[floor(mouseX)][floor(mouseY)] = 2500
+    previous[floor(mouseX)][floor(mouseY)] = 5000
   }
 }
